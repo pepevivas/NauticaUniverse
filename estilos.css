@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oxanium", sans-serif;
+}
+
+body {
+    background-color: #000;
+    background-image: url(imgs/blabla.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 1000;
+}
+
+header .interface {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; 
+}
+
+header .audio {
+    display: flex;
+    align-items: center;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+}
+
+#playPauseBtn {
+    padding: 10px 15px;
+    border: solid 2px #fff;
+    background: transparent; 
+    color: #fff;
+    border-radius: 5px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+#playPauseBtn:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+
+
+header .logo img {
+    max-width: 80px;
+    border-radius: 50%;
+}
+
+header .menu nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: 0; 
+    padding: 0; 
+}
+
+header .menu nav ul li {
+    font-size: 22px;
+}
+
+header .menu nav ul li a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+header .menu nav ul li a:hover {
+    font-size: 26px; 
+    transform: scale(1.1); 
+}
+
+
+header .descrição {
+    display: flex;
+    align-items: center; 
+}
+
+header .descrição ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+header .descrição button {
+    width: 140px;
+    height: 45px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .descrição button:hover {
+    background-color: white;
+    color: #000;
+}
+/* estilo do site */
+main{
+    padding-top: 120px;
+}
+section.nautica-site{
+    height: 100vh;
+
+    color: #fff;
+}
+.nautica-site .interface{
+    display: flex;
+    height: 100%;
+}
+
+.nautica-site .txt-nautica h1{
+    font-size: 4em;
+    line-height: 70px;
+    font-weight: 200;
+}
+.nautica-site .txt-nautica h1 span{
+    display: block;
+    font-weight: 800;
+}
+.nautica-site .txt-nautica p{
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 0;
+}
+.nautica-site .txt-nautica p span{
+    display: block;
+}
+ 

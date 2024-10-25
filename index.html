@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NauticaUniverse</title>
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="leviatas.html">Fauna</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">Historia</a></li>
+                    </ul>
+                </nav>
+            </section>
+    
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+    
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+    
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site">
+            </section>
+        </div>
+    </header>
+    
+
+    <main>
+        <section class="nautica-site">
+            <div class="interface">
+                <div class="txt-nautica">
+                    <h1>Nautica <span>UNIVERSE</span></h1>
+                    <p>Uma site de subnautica para que você <span>explore o incrível mundo 4546B</span></p>
+                </div>
+
+         
+        </section>
+    </main>
+    <script>
+        const audio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        audio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+
+</html>

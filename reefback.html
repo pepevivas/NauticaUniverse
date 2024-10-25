@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+<body class="reefback-leviathan">
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">História</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1 id="leviathans-titulo">Reefback Leviathan</h1>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1143169012&color=%2315282e&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/user-53447783" title="Subnautica_sounds" target="_blank" style="color: #cccccc; text-decoration: none;">Subnautica_sounds</a> · 
+                <a href="https://soundcloud.com/user-53447783/reefback-sounds" title="Reefback Sounds" target="_blank" style="color: #cccccc; text-decoration: none;">Reefback Sounds</a>
+            </div>
+
+            <h2>Entrada no banco de dados</h2>
+            <p>Essa vasta forma de vida possui mais de 30 metros de comprimento e foi designada como classe leviatã. Felizmente, ela se alimenta exclusivamente de formas de vida semelhantes ao plâncton presentes na água.</p>
+    
+            <h3>1. Carapaça Quitinosa:</h3>
+            <p>A maior parte da parte superior e parte da parte inferior dessa forma de vida é protegida por um exoesqueleto espesso e em camadas. Isso sugere um caminho evolutivo bastante diferente das outras criaturas em 4546B, a maioria das quais é de natureza vertebrada. A espécie reefback provavelmente conseguiu crescer muito mais do que outros herbívoros porque qualquer coisa grande o suficiente para quebrar sua carapaça há muito tempo foi extinta.</p>
+    
+            <h3>2. Glândulas de Enzimas:</h3>
+            <p>Semelhantes em aparência às glândulas de algas do gasópodo, esses órgãos localizados na parte inferior do reefback desempenham um papel desconhecido em seu sistema digestivo e são capazes de expelir pequenas quantidades de enzimas estomacais nas águas ao redor.</p>
+            <div class="image-leviathan">
+                <img src="imgs/reefback-leviathan.jpg" alt="Sea Trader">
+            </div>
+            <h3>3. Microcosmo Local:</h3>
+            <p>Uma variedade de diferentes espécies de cracas e plantas cresce na carapaça do reefback, inserindo suas raízes em cicatrizes antigas na quitina e aproveitando sua mobilidade para evitar predadores. No entanto, os reefbacks frequentemente são perseguidos por herbívoros mais rápidos e famintos, o que torna essa espécie de leviatã um microcosmo móvel que merece anos de estudo por si só.</p>
+
+            <h3>4. Ciclo de Vida:</h3>
+            <p>A expectativa de vida dos reefbacks provavelmente se estende por muitos séculos, caso eles sobrevivam ao ciclo inicial de crescimento. Durante as primeiras décadas, seu tamanho menor os torna vulneráveis a leviatãs carnívoros. Sociáveis, são vistos viajando em pequenos grupos e se comunicando através de um chamado ecoante, comportamento consistente com um nível básico de senciência.</p>
+
+            <p><strong>Avaliação:</strong> Abriga plantas, pequenos peixes e cracas ricas em metal.</p>
+    
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YqgrU94BQSI?si=J8ub2nTiHM24kxl5" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        backgroundAudio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                backgroundAudio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+    </script>     
+</body>
+</html>

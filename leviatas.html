@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Contruções</a></li>
+                        <li><a href="historia.html">Historias</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1>Fauna Marinha em Subnautica</h1>
+            <h2>A Vida Alienígena dos Oceanos</h2>
+            <p>
+                Os oceanos do planeta 4546B abrigam uma grande variedade de formas de vida, desde pequenas 
+                criaturas herbívoras até gigantescas criaturas predadoras. Cada uma delas desempenha um 
+                papel crucial no ecossistema deste mundo alienígena, garantindo o equilíbrio entre espécies.
+            </p>
+        
+            <h2>Herbívoros e Predadores Menores</h2>
+            <p>
+                Entre as criaturas mais comuns estão pequenos peixes herbívoros, como o *Peeper* e o 
+                *Bladderfish*. Eles são uma fonte de alimento tanto para os sobreviventes quanto para outros 
+                predadores. Predadores menores, como o *Stalker*, caçam presas de médio porte e são conhecidos 
+                por sua tendência a acumular objetos metálicos.
+            </p>
+        
+            <h2>Um Vislumbre dos Gigantes</h2>
+            <p>
+                Para além das criaturas menores, existem espécies de proporções gigantescas que dominam 
+                as águas. Esses seres são classificados como <strong>Leviatãs</strong>, e sua presença é 
+                tanto fascinante quanto perigosa para quem ousa explorá-los de perto.
+            </p>
+        
+            <p>
+                Na próxima página, falaremos em detalhes sobre os <a href="classe-leviata.html">Leviatãs</a>, 
+                criaturas imensas que representam o ápice da cadeia alimentar em Subnautica. Prepare-se para 
+                descobrir os gigantes que habitam o fundo do mar!
+            </p>
+        </div>
+        <div class="image-container">
+            <img class="pepper" src="imgs/WhatsApp Image 2024-10-18 at 19.18.55.jpeg" alt="Imagem de um Peeper" />
+            <img class="tubarao" src="imgs/tubarao-da-areia.jpeg" alt="Imagem de um Tubarão" />
+        </div>
+    </main>
+    
+    
+
+    <script>
+        const audio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        audio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+
+</html>

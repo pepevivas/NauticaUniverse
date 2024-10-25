@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+<body class="Sea-emperor">
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">História</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1 id="leviathans-titulo">Sea Emperor Leviathan</h1>
+
+            <div class="audio-leviathan audio-controls">
+                <h3>Som da Sea Emperor Leviathan</h3>
+                <audio id="reaperAudio" src="audios/seaemperor.mp3" loop></audio>
+                <div class="controls">
+                    <button id="playReaper">Play</button>
+                    <button id="pauseReaper">Pause</button>
+                    <button id="restartReaper">Voltar ao Início</button>
+                </div>
+                <div class="time-info">
+                    <span id="currentReaperTime">00:00</span> / 
+                    <span id="reaperDuration">00:00</span>
+                </div>
+            </div>
+
+            <h2>Entrada no banco de dados</h2>
+            <p>As espécies da classe Leviatã são vastos organismos no topo de suas respectivas cadeias alimentares. 
+            Esta espécie é um caçador ágil, com sentidos altamente desenvolvidos.</p>
+
+            <h3>1. Tamanhos do espécime</h3>
+            <p>CATEGORIAS DE TAMANHO DO ESPECIME FORAM AJUSTADAS PARA CIMA PARA ACOLHER ESTA ESPÉCIE.</p>
+
+            <h3>2. Alimentação e Digestão</h3>
+            <p>Dados de pesquisa alienígena indicam que, apesar de seu tamanho, esta espécie se alimenta inteiramente de microorganismos que filtra da água, os quais dependem de um ecossistema complicado de vida vegetal e animal.</p>
+            <div class="image-leviathan">
+                <img src="imgs/sea-emperor-leviathan.jpeg" alt="Reaper">
+            </div>
+            <h3>3. Reprodução</h3>
+            <p>Órgãos grandes, semelhantes a ovários, são encontrados na seção média da criatura, sugerindo que, como outras espécies deste planeta, ela produz ovos; no entanto, tecido cicatricial interno indica provável infertilidade.</p>
+
+            <h3>4. Enzima 42</h3>
+            <p>O imperador produz a Enzima 42 em sua cavidade estomacal para decompor sua comida e ocasionalmente a expeli para as águas circundantes. Essa substância foi encontrada para neutralizar os efeitos da bactéria, e sua presença no ecossistema hoje explicaria como a vida no planeta sobreviveu ao surto. Restaria explicar por qual mecanismo a enzima está sendo liberada.</p>
+
+            <h3>5. Saúde</h3>
+            <p>Análise comparativa de tamanho e taxas metabólicas indica que o espécime capturado pelos pesquisadores tinha aproximadamente 1.600 anos. Extensa cicatrização interna e externa sugere que viveu muito além da expectativa de vida máxima para sua espécie.</p>
+
+            <h4>Avaliação:</h4>
+            <p>Embora um espécime saudável de imperador possa ter algum potencial como cura, é improvável que qualquer sujeito de pesquisa tenha sobrevivido aos procedimentos de quarentena.</p>
+
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Tsw41dnDlto?si=D6bYZwdk3rKB11iZ" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        backgroundAudio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                backgroundAudio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+
+        // Controles do som do Reaper Leviathan
+        const reaperAudio = document.getElementById('reaperAudio');
+        const playReaperBtn = document.getElementById('playReaper');
+        const pauseReaperBtn = document.getElementById('pauseReaper');
+        const restartReaperBtn = document.getElementById('restartReaper');
+        const currentReaperTime = document.getElementById('currentReaperTime');
+        const reaperDuration = document.getElementById('reaperDuration');
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        reaperAudio.addEventListener('loadedmetadata', () => {
+            reaperDuration.textContent = formatTime(reaperAudio.duration);
+        });
+
+        reaperAudio.addEventListener('timeupdate', () => {
+            currentReaperTime.textContent = formatTime(reaperAudio.currentTime);
+        });
+
+        playReaperBtn.addEventListener('click', () => reaperAudio.play());
+
+        pauseReaperBtn.addEventListener('click', () => reaperAudio.pause());
+
+        restartReaperBtn.addEventListener('click', () => {
+            reaperAudio.currentTime = 0;
+            reaperAudio.play();
+        });
+    </script>    
+</body>
+</html>

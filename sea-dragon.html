@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+<body class="sea-dragon">
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">História</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1 id="leviathans-titulo">Sea Dragon Leviathan</h1>
+
+            <div class="audio-leviathan audio-controls">
+                <h3>Som do Sea Dragon Leviathan</h3>
+                <audio id="reaperAudio" src="audios/sea-dragon-leviathan-roar-#3-made-with-Voicemod.mp3" loop></audio>
+                <div class="controls">
+                    <button id="playReaper">Play</button>
+                    <button id="pauseReaper">Pause</button>
+                    <button id="restartReaper">Voltar ao Início</button>
+                </div>
+                <div class="time-info">
+                    <span id="currentReaperTime">00:00</span> / 
+                    <span id="reaperDuration">00:00</span>
+                </div>
+            </div>
+
+            <h2>Entrada no banco de dados</h2>
+            <p>Um leviatã colossal com características reptilianas, visto rondando o coração do cratera vulcânica que sustenta a vida nesta área. O espécime escaneado media 112 metros de comprimento.</p>
+
+            <h3>1. Tecido Resistente ao Calor:</h3>
+            <p>A análise do tecido revela que 1/3 do corpo deste espécime é composto por materiais inanimados, concentrados principalmente na região do tórax. O consumo e a retenção de substâncias minerais podem explicar a habilidade dessa forma de vida de suportar temperaturas extremas. A criatura parece até ser capaz de consumir materiais em fusão e expeli-los contra seus adversários.</p>
+
+            <h3>2. Braços Dianteiros:</h3>
+            <p>Braços dianteiros evolutivamente distintos são usados tanto para propulsão quanto para fins ofensivos. As evidências sugerem que essa espécie se desviou evolutivamente de outras formas de vida no planeta há dezenas de milhões de anos. O Sea Dragon provavelmente é uma das espécies mais antigas do planeta.</p>
+
+            <div class="image-leviathan">
+                <img src="imgs/sea-dragon-leviathan.jpeg" alt="Reaper">
+            </div>
+
+            <h3>3. Comportamento:</h3>
+            <p>Sendo a maior espécie carnívora encontrada em 4546B, quase tudo é considerado presa potencial. Com poucos alvos substanciais nos sistemas de cavernas vulcânicas, o Sea Dragon provavelmente se aventura em águas mais frias para caçar outros leviatãs menores, encurralando-os e forçando-os para águas mais profundas, onde acabam sendo literalmente cozidos vivos.</p>
+
+            <p>O tamanho dos Sea Dragons e as restrições dos sistemas de cavernas em que habitam sugerem que a população é extremamente baixa, talvez em dígitos únicos. Embora não seja incomum que predadores maiores mantenham populações menores, é possível que as fontes de alimento dos Sea Dragons tenham diminuído com o tempo. Esta espécie pode estar à beira da extinção.</p>
+
+            <p><strong>Avaliação:</strong> Ameaça extrema – Evite em todas as circunstâncias.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SC3XN_zANRk?si=XvKX8OD5BGpha2tY" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        backgroundAudio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                backgroundAudio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+
+        const reaperAudio = document.getElementById('reaperAudio');
+        const playReaperBtn = document.getElementById('playReaper');
+        const pauseReaperBtn = document.getElementById('pauseReaper');
+        const restartReaperBtn = document.getElementById('restartReaper');
+        const currentReaperTime = document.getElementById('currentReaperTime');
+        const reaperDuration = document.getElementById('reaperDuration');
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        reaperAudio.addEventListener('loadedmetadata', () => {
+            reaperDuration.textContent = formatTime(reaperAudio.duration);
+        });
+
+        reaperAudio.addEventListener('timeupdate', () => {
+            currentReaperTime.textContent = formatTime(reaperAudio.currentTime);
+        });
+
+        playReaperBtn.addEventListener('click', () => reaperAudio.play());
+
+        pauseReaperBtn.addEventListener('click', () => reaperAudio.pause());
+
+        restartReaperBtn.addEventListener('click', () => {
+            reaperAudio.currentTime = 0;
+            reaperAudio.play();
+        });
+    </script>        
+</body>
+</html>

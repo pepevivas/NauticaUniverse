@@ -1,0 +1,130 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="leviata.css">
+        <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+        <title>NauticaUniverse</title>
+    </head>
+    <body>
+        <header>
+            <div class="interface">
+                <section class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Página Principal</a></li>
+                            <li><a href="biomas.html">Flora</a></li>
+                            <li><a href="locais.html">Contruções</a></li>
+                            <li><a href="historia.html">Historia</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <section class="descrição">
+                    <ul>
+                        <li>
+                            <a href="sobre.html">
+                                <button>Descrição</button>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="audio">
+                    <div class="audio-player">
+                        <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                        <button id="playPauseBtn">Play</button>
+                    </div>
+                </section>
+
+                <section class="logo">
+                    <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+                </section>
+            </div>
+        </header>
+        <main class="nautica-site">
+            <div class="txt-nautica">
+                <h1>Leviatãs: Os Gigantes dos Oceanos de Subnautica</h1>
+        
+                <h2>O Que São os Leviatãs?</h2>
+                <p>
+                    Em Subnautica, os Leviatãs são criaturas colossais que vagam pelas profundezas dos oceanos do planeta 4546B.
+                    Estes gigantes alienígenas variam entre pacíficos herbívoros e predadores ferozes, prontos para eliminar qualquer um que cruze seu caminho.
+                </p>
+        
+                <h2>Uma Ameaça ou Maravilha?</h2>
+                <p>
+                    Encontrar um Leviatã é sempre uma experiência inesquecível. Algumas espécies, como o <strong>Reaper Leviathan</strong>, são extremamente agressivas e podem destruir até o mais preparado explorador. 
+                    Outras, como o pacífico <strong>Reefback Leviathan</strong>, oferecem um espetáculo sereno enquanto transportam ecossistemas em suas costas.
+                </p>
+        
+                <h2>Veja um dos leviatas mais aterrorizantes de subnautica</h2>
+                <p>Abaixo está um vídeo que mostra o temido Reaper Leviathan em uma perseguição impressionante:</p>
+        
+                <div class="video-container">
+                    <iframe 
+                    width="560" height="315" src="https://www.youtube.com/embed/xhgLa9fqII0?si=sBIWHwoe2oQcuAXT" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                </div>
+                
+                <h2 id="all-leviathan">Todos os Leviatãs de Subnautica:</h2>
+
+            <div class="leviathan-grid">
+                <a href="sea-trader.html" class="leviathan-item">
+                    <img src="imgs/Sea_Treader.webp" alt="Sea Trader Leviathan">
+                    <p>Sea Trader Leviathan</p>
+                </a>
+
+                <a href="reefback.html" class="leviathan-item">
+                    <img src="imgs/reefback-leviathan.jpg" alt="Reefback Leviathan">
+                    <p>Reefback Leviathan</p>
+                </a>
+
+                <a href="reaper.html" class="leviathan-item">
+                    <img src="imgs/reaper.jpg" alt="Reaper Leviathan">
+                    <p>Reaper Leviathan</p>
+                </a>
+
+                <a href="ghost.html" class="leviathan-item">
+                    <img src="imgs/ghost-leviathan.jpeg" alt="Ghost Leviathan">
+                    <p>Ghost Leviathan</p>
+                </a>
+
+                <a href="sea-dragon.html" class="leviathan-item">
+                    <img src="imgs/sea-dragon-leviathan.jpeg" alt="Sea Dragon Leviathan">
+                    <p>Sea Dragon Leviathan</p>
+                </a>
+
+                <a href="sea-emperor.html" class="leviathan-item">
+                    <img src="imgs/sea-emperor-leviathan.jpeg" alt="Sea Emperor Leviathan">
+                    <p>Sea Emperor Leviathan</p>
+                </a>
+            </div>
+            </div>
+        </main>
+        
+
+        <script>
+            const audio = document.getElementById('backgroundAudio');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+
+            audio.volume = 0.5;
+
+            playPauseBtn.addEventListener('click', function () {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = 'Pause';
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = 'Play';
+                }
+            });
+        </script>    
+    </body>
+    </html>

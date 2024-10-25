@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oxanium", sans-serif;
+    color: white;
+}
+/*imagens de fundo de cada aba, por algum motivo nao consegui fazer sem repetir esse tanto de vezes*/
+body {
+    background-color: #000;
+    background-image: url('imgs/blabla.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding-top: 30px;
+    
+}
+
+body.sea-dragon{
+    background-image: url('imgs/sea-dragon-wallpaper.jpg_large');
+
+}
+body.ghost-leviathan{
+    background-image: url('imgs/ghost-wallpaper.webp');
+}
+body.reefback-leviathan{
+    background-image: url('imgs/reefback-leviathan-subnautica-t0una1iarhzi6t8c.jpg');
+}
+body.Sea_Treader{
+    background-image: url('imgs/sea-trader-wallpaper.jpg');
+}
+body.Sea-emperor{
+    background-image: url(imgs/emperor-wallpaper.jpg);
+}
+/*estilo do header, vale pra todas os sites*/
+header {
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 1000;
+}
+
+header .interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 80px;
+    border-radius: 50%;
+}
+
+header .menu nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+header .menu nav ul li a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+header .menu nav ul li a:hover {
+    font-size: 26px; 
+    transform: scale(1.1); 
+}
+
+header .audio {
+    display: flex;
+    align-items: center;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+}
+
+#playPauseBtn {
+    padding: 10px 15px;
+    border: solid 2px #fff;
+    background: transparent; 
+    color: #fff;
+    border-radius: 5px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+header .menu nav ul li a:hover {
+    transform: scale(1.1);
+}
+header .descrição ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+header .descrição button {
+    width: 140px;
+    height: 45px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff; 
+    cursor: pointer;
+    transition: 0.5s;
+    outline: none;
+
+}
+
+header .descrição button:hover {
+    background-color: white; 
+    color: #000; 
+}
+/*estilo dos textos dentro do main*/
+.txt-nautica h1 {
+    margin-top: 15px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: 200;
+}
+
+.txt-nautica h1 span {
+    display: block;
+    font-weight: 800;
+}
+.txt-nautica h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+.txt-nautica p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+.nautica-site {
+    margin: 100px auto;
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border: 5px solid #fff;
+    border-radius: 15px;
+    padding: 60px 40px;
+    display: flex; 
+    align-items: flex-start;   
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.txt-nautica {
+    flex: 1; 
+    text-align: left; 
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    margin-top: 150px;
+}
+
+
+.nautica-site img {
+    max-width: 250px; 
+    height: auto; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.nautica-site a {
+    font-size: 20px;
+    color: #0004ff; 
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s; 
+}
+
+.nautica-site a:hover {
+    font-size: 24px;
+    color: #2600ff;
+}
+.video-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.txt-nautica ul {
+    margin-top: 15px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.image-container-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    margin-top: 250px;
+}
+/*aqui é a estilizacao daquela parte onde mostro todos os leviatas do jogo com links para suas paginas*/
+h2#all-leviathan {
+    margin: 40px 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+.leviathan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.leviathan-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.leviathan-item img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.leviathan-item h2 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.leviathan-item:hover img {
+    transform: scale(1.05);
+}
+/*imagem só do texto dos leviatas*/
+.image-leviathan{
+    float: right;
+}
+/*customizacao do audio de cada leviata*/
+.audio-player button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.audio-controls {
+    background-color: rgba(0, 0, 0, 0.10); 
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+
+.audio-controls h3 {
+    color: white;
+    font-family: 'Oxanium', sans-serif;
+    margin-bottom: 15px;
+}
+
+.audio-controls audio {
+    display: none;
+}
+
+.audio-controls button {
+    background-color: #1b1b2f;
+    color: white;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.audio-controls button:hover {
+    background-color: white;
+    color: #1b1b2f;
+    transform: scale(1.1);
+}
+
+.audio-controls button:active {
+    transform: scale(1);
+}

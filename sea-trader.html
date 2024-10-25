@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+<body class="Sea_Treader">
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">História</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1 id="leviathans-titulo">Sea Trader Leviathan</h1>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/391293525&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ethereal_roach" title="Krooked Mind" target="_blank" style="color: #cccccc; text-decoration: none;">Krooked Mind</a> · <a href="https://soundcloud.com/ethereal_roach/subnautica-sea-treader-sounds" title="Subnautica Sea Treader Sounds" target="_blank" style="color: #cccccc; text-decoration: none;">Subnautica Sea Treader Sounds</a></div>
+
+            <h2>Entrada no banco de dados</h2>
+            <p>Um vasto leviatã bípede que vagueia pelos recifes em rebanhos, pastando no fundo do mar.</p>
+    
+            <h3>1. Antenas:</h3>
+            <p>As antenas na cabeça da criatura podem detectar uma variedade de cheiros, ajudando os Sea Treaders a encontrar pastagens frescas, evitar o caminho de grandes predadores e perceber sinais químicos de outros de sua espécie.</p>
+    
+            <h3>2. Carapaça:</h3>
+            <p>Uma armadura espessa protege a criatura de ataques de quase todos os carnívoros, exceto os maiores. Duas pernas se estendem da parte traseira, permitindo que se mova eficientemente pelo fundo do mar.</p>
+            <div class="image-leviathan">
+                <img src="imgs/Sea_Treader.webp" alt="Sea Trader">
+            </div>
+            <h3>3. Focinho Alongado:</h3>
+            <p>Usado para sifonar material vegetal do fundo do mar, essa adaptação também ajuda a manter o equilíbrio enquanto pastam.</p>
+    
+            <h3>4. Comportamento:</h3>
+            <p>Grandes rebanhos podem dizimar a flora de uma única área, promovendo o comportamento migratório dos Sea Treaders. As famílias mantêm seus jovens mais próximos ao centro do rebanho, e os pais atacarão intrusos excessivamente curiosos em busca de uma refeição fácil.</p>
+    
+            <p><strong>Avaliação:</strong> Os rebanhos de Sea Treaders podem desenterrar depósitos minerais à medida que revolvem a areia.</p>
+    
+            <div class="video-container">
+                <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/_koADruuURQ?si=0SpECJn2w4ZvloAq" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <script>
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        backgroundAudio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                backgroundAudio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+
+        // Controles do som do Reaper Leviathan
+        const reaperAudio = document.getElementById('reaperAudio');
+        const playReaperBtn = document.getElementById('playReaper');
+        const pauseReaperBtn = document.getElementById('pauseReaper');
+        const restartReaperBtn = document.getElementById('restartReaper');
+        const currentReaperTime = document.getElementById('currentReaperTime');
+        const reaperDuration = document.getElementById('reaperDuration');
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        reaperAudio.addEventListener('loadedmetadata', () => {
+            reaperDuration.textContent = formatTime(reaperAudio.duration);
+        });
+
+        reaperAudio.addEventListener('timeupdate', () => {
+            currentReaperTime.textContent = formatTime(reaperAudio.currentTime);
+        });
+
+        playReaperBtn.addEventListener('click', () => reaperAudio.play());
+
+        pauseReaperBtn.addEventListener('click', () => reaperAudio.pause());
+
+        restartReaperBtn.addEventListener('click', () => {
+            reaperAudio.currentTime = 0;
+            reaperAudio.play();
+        });
+    </script>     
+</body>
+</html>

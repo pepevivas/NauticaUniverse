@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leviata.css">
+    <link rel="shortcut icon" href="imgs/subnautica.icon.jpg" type="image/x-icon">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <title>NauticaUniverse</title>
+</head>
+<body class="ghost-leviathan">
+    <header>
+        <div class="interface">
+            <section class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Página Principal</a></li>
+                        <li><a href="biomas.html">Flora</a></li>
+                        <li><a href="locais.html">Construções</a></li>
+                        <li><a href="historia.html">História</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="descrição">
+                <ul>
+                    <li>
+                        <a href="sobre.html">
+                            <button>Descrição</button>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="audio">
+                <div class="audio-player">
+                    <audio id="backgroundAudio" src="audios/1 - Salutations.mp3" loop></audio>
+                    <button id="playPauseBtn">Play</button>
+                </div>
+            </section>
+
+            <section class="logo">
+                <img src="imgs/subnautica.icon.jpg" alt="Logotipo do site" />
+            </section>
+        </div>
+    </header>
+    
+    <main class="nautica-site">
+        <div class="txt-nautica">
+            <h1>Ghost Leviathan</h1>
+
+            <div class="audio-leviathan audio-controls">
+                <h3>Som do Ghost Leviathan</h3>
+                <audio id="reaperAudio" src="audios/ghost-leviathan-sounds-subnautica-made-with-Voicemod.mp3" loop></audio>
+                <div class="controls">
+                    <button id="playReaper">Play</button>
+                    <button id="pauseReaper">Pause</button>
+                    <button id="restartReaper">Voltar ao Início</button>
+                </div>
+                <div class="time-info">
+                    <span id="currentReaperTime">00:00</span> / 
+                    <span id="reaperDuration">00:00</span>
+                </div>
+            </div>
+            <h2>Entrada no banco de dados</h2>
+            <p>Esta criatura está se aproximando do limite de tamanho para formas de vida orgânicas sustentáveis ​​e foi designada classe leviatã. 
+            Os adultos da espécie foram encontrados exclusivamente nas bordas da cratera vulcânica que sustenta a vida nesta parte do planeta e reagem com extrema agressividade à aproximação.</p>
+
+            <h3>1. Martelo:</h3>
+            <p>Extensões cartilaginosas do crânio da criatura formam um martelo que protege o leviatã fantasma enquanto ele realiza ataques devastadores.</p>
+
+            <h3>2. Mandíbulas:</h3>
+            <p>Embora sejam totalmente capazes de rasgar a carne de qualquer criatura ao seu alcance, todas as evidências indicam que leviatãs fantasmas maduros 
+            se alimentam de formas de vida microscópicas nas águas ao redor das bordas da zona habitada. 
+            Seus ataques cruéis aos intrusos não são de natureza predatória, mas sim territoriais. 
+            Uma criatura tão vasta requer uma enorme extensão de água para satisfazer suas necessidades diárias de calorias.</p>
+            <div class="image-leviathan">
+                <img src="imgs/ghost-leviathan.jpeg" alt="Reaper">
+            </div>
+            <h3>3. Torso:</h3>
+            <p>Seu corpo interior musculoso é cercado por uma membrana externa translúcida, sugerindo adaptação para ambientes profundos e com pouca luz. 
+            Quando ameaçado, ele pode tensionar todo o seu corpo antes de atacar com uma velocidade incrível.</p>
+
+            <h3>4. Ciclo de vida:</h3>
+            <p>Comportamento migratório provável. Este espécime provavelmente nasceu longe da área onde foi encontrado.</p>
+
+            <p><strong>Avaliação:</strong> Ameaça extrema – Evite a borda da cratera.</p>
+
+            <div class="video-container">
+                <iframe 
+                    width="560" height="315" 
+                    src="https://www.youtube.com/embed/0-9v0Cx6Ah8?si=78_nMEK4KXLxnpRQ" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        backgroundAudio.volume = 0.5;
+
+        playPauseBtn.addEventListener('click', function () {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play();
+                playPauseBtn.textContent = 'Pause';
+            } else {
+                backgroundAudio.pause();
+                playPauseBtn.textContent = 'Play';
+            }
+        });
+
+        // Controles do som do Reaper Leviathan
+        const reaperAudio = document.getElementById('reaperAudio');
+        const playReaperBtn = document.getElementById('playReaper');
+        const pauseReaperBtn = document.getElementById('pauseReaper');
+        const restartReaperBtn = document.getElementById('restartReaper');
+        const currentReaperTime = document.getElementById('currentReaperTime');
+        const reaperDuration = document.getElementById('reaperDuration');
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        reaperAudio.addEventListener('loadedmetadata', () => {
+            reaperDuration.textContent = formatTime(reaperAudio.duration);
+        });
+
+        reaperAudio.addEventListener('timeupdate', () => {
+            currentReaperTime.textContent = formatTime(reaperAudio.currentTime);
+        });
+
+        playReaperBtn.addEventListener('click', () => reaperAudio.play());
+
+        pauseReaperBtn.addEventListener('click', () => reaperAudio.pause());
+
+        restartReaperBtn.addEventListener('click', () => {
+            reaperAudio.currentTime = 0;
+            reaperAudio.play();
+        });
+    </script>    
+</body>
+</html>
